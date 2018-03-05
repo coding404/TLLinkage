@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="TLLinkage"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_about_me"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="关于我"
+            android:textColor="@color/white" />
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,7 +48,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="提货地址：" />
+                android:text="出发地址：" />
 
             <Spinner
                 android:id="@+id/sp_pick_up_province"
@@ -76,7 +99,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="送货地址：" />
+                android:text="到达地址：" />
 
             <Spinner
                 android:id="@+id/sp_receive_province"
@@ -116,21 +139,21 @@
 
         <TextView
             android:id="@+id/tv_commit"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/bg_commit"
             android:gravity="center"
             android:padding="8dp"
             android:text="提交"
-            android:textColor="#fff" />
+            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/tv_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="666" />
+            android:text="" />
     </LinearLayout>
-</RelativeLayout>
+</LinearLayout>

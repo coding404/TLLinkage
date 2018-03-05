@@ -1,6 +1,7 @@
-package com.liushu.example.tllinkage;
+package com.liushu.example.tllinkage.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.text.InputFilter;
@@ -13,6 +14,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
+import com.liushu.example.tllinkage.Addressbean;
+import com.liushu.example.tllinkage.CityModel;
+import com.liushu.example.tllinkage.DistrictModel;
+import com.liushu.example.tllinkage.ProvinceModel;
+import com.liushu.example.tllinkage.R;
+import com.liushu.example.tllinkage.activity.AboutMeActivity;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -369,9 +376,19 @@ public class MainActivity extends Activity {
         return provinceList;
     }
 
-    @OnClick(R.id.tv_commit)
-    public void onClick() {
-        mTvDetail.setText("出发地：" + fromProValue + fromCityValue + fromDistValue + "\n" + "目的地：" + toProValue + toCityValue + toDistValue);
+    @OnClick({R.id.tv_commit, R.id.tv_about_me})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.tv_commit:
+                mTvDetail.setText("出发地：" + fromProValue + fromCityValue + fromDistValue + "\n" + "目的地：" + toProValue + toCityValue + toDistValue);
+                break;
+            case R.id.tv_about_me:
+                Intent intent = new Intent(this, AboutMeActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
+        }
     }
 
     public Addressbean getAssetData() {
